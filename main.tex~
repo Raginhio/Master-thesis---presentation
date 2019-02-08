@@ -1,0 +1,316 @@
+% ~~~~~~~~~~~~ %
+% tab size = 4 %
+% ~~~~~~~~~~~~ %
+
+% WARNING: if the compiler returns the error ``incompatible list can't be unboxed''
+% try to decomment the following \RequirePackage command:
+%\RequirePackage{atbegshi} 
+
+\documentclass % ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ %
+[																	%
+	11pt,															%
+	hyperref={pdfpagelabels=false},									%
+	xcolor	= pdftex, dvipsnames, table,							%
+% 	handout,														% decomment for handouts
+]																	%
+{beamer}															%
+%																	%
+\usepackage[latin1]{inputenc}										%
+\usepackage[english]{babel}											%
+\usepackage{type1cm}												%
+\usepackage{type1ec}												%
+\usepackage[T1]{fontenc}											%
+\usepackage{lmodern}												%
+\usepackage{amsmath, amssymb, amsfonts, amsthm}						%
+\usepackage{graphicx}												%
+\usepackage{hyperref}												%
+\usepackage{booktabs}												%
+\usepackage{bm}														%
+\usepackage{tikz}													%
+% \usetikzlibrary{arrows,decorations.text,decorations.pathmorphing}	%
+% \usetikzlibrary{decorations.footprints,fadings,calc,trees,mindmap}%
+% \usetikzlibrary{shadows,patterns,positioning,shapes,matrix,fit}	%
+% \usetikzlibrary{intersections,datavisualization,plotmarks,spy}	%
+\usepackage{pgfplots}												%
+% \pgfplotsset{compat=1.3}											%
+%\usetikzlibrary{external}											%
+%\tikzexternalize[shell escape=-enable-write18]						%
+%																	%
+\usepackage{pgfpages}												%
+\setbeameroption{show notes on second screen=left}					% decomment for just 1 screen
+%																	%
+% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ %
+%																	%
+\def\DarkBlue		{black!40!blue}									%
+\def\DarkGray		{black!70!white}								%
+\def\DarkGreen		{black!40!green}								%
+\def\DarkRed		{black!40!red}									%
+\def\DarkYellow		{black!40!yellow}								%
+\def\DarkOrange		{black!40!orange}								%
+%																	%
+\def\Blue			{black!10!blue}									%
+\def\Gray			{black!50!white}								%
+\def\Green			{black!10!green}								%
+\def\Red			{black!10!red}									%
+\def\Yellow			{black!10!yellow}								%
+\def\Orange			{black!10!orange}								%
+%																	%
+\def\LightBlue		{white!40!blue}									%
+\def\LightGray		{white!70!white}								%
+\def\LightGreen		{white!40!green}								%
+\def\LightRed		{white!40!red}									%
+\def\LightYellow	{white!40!yellow}								%
+\def\LightOrange	{white!40!orange}								%
+%																	%
+% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ %
+%																	%
+\def\Background		{white}											%
+\def\Foreground		{black}											%
+\def\Primary		{\Blue}											%
+\def\Secondary		{\Gray}											%
+%																	%
+\def\StrongPrimary	{\Primary!80!black}								%
+\def\SoftPrimary	{\Primary!20!white}								%
+\def\StrongSecondary{\Secondary!80!black}							%
+\def\SoftSecondary	{\Secondary!20!white}							%
+%																	%
+% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ %
+%																	%
+\graphicspath{{./Images/}}											%
+%																	%
+\input{Scripts/newcommands}											%
+\input{Scripts/theme}												%
+%																	%
+% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ %
+%																	%
+\title		[Short title]		{Long title}						%
+\date		{} % empty = no dates. Alternatives: {\today} / {April 20, 2099}
+\institute	[Short institute]	{Institute}							%
+\author		[Short author]		{Long author}						%
+%																	%
+\begin{document}													%
+%																	%
+% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ %
+
+
+% title page
+\begin{frame}
+	%
+	\titlepage
+	%
+	\begin{center}
+		\includegraphics[height = 1.5cm]{logo_kth}
+		\qquad
+		\includegraphics[height = 1.5cm]{logo_access}
+	\end{center}
+	
+	\note{ put your notes here }
+	%
+\end{frame}
+
+
+% table of contents 
+\section{Table of contents}
+\begin{frame}
+	%
+	\frametitle{Table of Contents}
+	\tableofcontents[subsectionstyle=hide]	% [show | shaded | hide]
+	
+	\note{ put your notes here }
+	%
+\end{frame}
+
+
+\section{Templates}
+\begin{frame}
+	%
+	\frametitle{Empty frame}
+	\framesubtitle{(subtitle)}
+	
+	\note{ put your notes here }
+	%
+\end{frame}
+
+
+\begin{frame}
+	%
+	\frametitle{Frame with blocks}
+	\framesubtitle{(subtitle)}
+	%
+	\begin{block}{First Block}
+		%
+		First block text
+		%
+	\end{block}
+	%
+	\vspace*{1cm}
+	%
+	\begin{block}{Second Block}
+		%
+		Second block text
+		%
+	\end{block}
+	
+	\note{ put your notes here }
+	%
+\end{frame}
+
+
+\begin{frame}
+	%
+	\frametitle{Frame with itemized list}
+	\framesubtitle{(subtitle)}
+	%
+	\begin{itemize}
+		%
+		\item<1->{Visible from first slide}
+		\item<2->{Visible from second slide}
+		\item<3->{Visible from third slide}
+		%
+	\end{itemize}
+	
+	\note{ put your notes here }
+	%
+\end{frame}
+
+
+\begin{frame}
+	%
+	\frametitle{Frame with two columns}
+	\framesubtitle{(subtitle)}
+	%
+	\begin{columns}[c] % [ b | c | t | T | onlytextwidth | totalwidth ]
+		%
+		% ``columns'' options usage (from the beamer user guide)
+		%
+		% [b] will cause the bottom lines of the columns to be vertically aligned.
+		% [c] will cause the columns to be centered vertically relative to each
+		%     other. Default, unless the global option t is used.
+		% [onlytextwidth] is the same as totalwidth=\textwidth.
+		% [t] will cause the first lines of the columns to be aligned. Default
+		%     if global option t is used.
+		% [T] is similar to the t option, but T aligns the tops of the first lines
+		%     while t aligns the so-called baselines of the first lines. If strange
+		%     things seem to happen in conjunction with the t option (for example
+		%     if a graphic suddenly ``drops down'' with the t option instead of
+		%     ``going up,''), try using this option instead.
+		% [totalwidth= width] will cause the columns to occupy not the whole page
+		%     width, but only width, all told.
+		%
+		% -----------------------------------------------
+		\begin{column}{0.5\textwidth}
+			column one
+		\end{column}
+		%
+		% -----------------------------------------------
+		\begin{column}{0.5\textwidth}
+			column two
+		\end{column}
+		%
+	\end{columns}
+	
+	\note{ put your notes here }
+	%
+\end{frame}
+
+
+\begin{frame}
+	%
+	\frametitle{Frame with overlays}
+	\framesubtitle{(subtitle)}
+	%
+	\begin{overlayarea}{5cm}{3cm} % {width}{height}
+		\begin{center}
+			%
+			\onslide<1-1 | handout:0>
+			{
+				\includegraphics<1-1>[height=1cm]{logo_access}
+			}
+			\onslide<2-4 | handout:0>
+			{
+				\includegraphics<2-4>[height=1cm]{logo_kth}
+			}
+			%
+		\end{center}
+	\end{overlayarea}
+	%
+\end{frame}
+
+
+\setbeamercolor{background canvas}{bg=white!80!black}
+\begin{frame}
+	
+	\frametitle{Frame with a different background}
+	
+\end{frame}
+\setbeamercolor{background canvas}{bg=white}
+
+
+
+\usebackgroundtemplate{\includegraphics[width=\paperwidth, height=\paperheight]{logo_access}}
+\begin{frame}
+	
+	\frametitle{Frame with a picture as its background}
+	
+\end{frame}
+\usebackgroundtemplate{}
+
+
+
+%\begin{frame}
+	%%
+	%\frametitle{Frame with a movie}
+	%\framesubtitle{(subtitle)}
+	%%
+	%\movie[externalviewer]{text on the slides}{./video.wmw}
+	%%
+%\end{frame}
+
+
+% ending page
+\section*{}
+\begin{frame}
+	%
+	\titlepage
+	%
+	\begin{center}
+		name.surname@kth.se \\
+		www.ee.kth.se/$\sim$XXXX/
+	\end{center}
+	
+	\note{ put your notes here }
+	%
+\end{frame}
+
+
+% bibliography
+\section{Bibliography}
+\begin{frame}
+\begin{thebibliography}{}
+	%
+	\frametitle{Bibliography}
+	\small
+	%
+	\bibitem[1]{elements_of_style}
+	William Strunk, Jr.\ (1918)
+	\newblock The Elements of Style
+	\newblock Pearson Education Company
+	%
+	\vspace{0.3cm}
+	%
+	\bibitem[2]{promessi_sposi}
+	Alessandro Manzoni (1842)
+	\newblock I promessi sposi
+	\newblock Adelchi
+	
+	\note{ put your notes here }
+	%
+\end{thebibliography}
+\end{frame}
+
+
+% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ %
+%																	%
+\end{document}														%
+%																	%
+% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ %
